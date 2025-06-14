@@ -1,0 +1,32 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.6'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'fpt.fu.dn.fpthospitalcare'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web-services'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'com.google.cloud:google-cloud-storage:2.1.1'
+	implementation 'org.apache.poi:poi:5.0.0'
+	implementation 'org.apache.poi:poi-ooxml:5.0.0'
+	implementation 'javax.mail:javax.mail-api:1.6.2'
+    implementation 'com.sun.mail:javax.mail:1.6.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

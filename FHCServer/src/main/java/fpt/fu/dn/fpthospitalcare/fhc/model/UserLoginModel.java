@@ -1,0 +1,19 @@
+package fpt.fu.dn.fpthospitalcare.fhc.model;
+
+public class UserLoginModel {
+	private String phone;
+	private String password;
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String pasword) {
+		this.password = pasword;
+	}
+	
+}

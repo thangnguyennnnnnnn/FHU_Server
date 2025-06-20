@@ -5,12 +5,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.ConstantVariable;
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.FHCCommonService;
 import fpt.fu.dn.fpthospitalcare.fhc.model.AppointmentModelDB;
 
+@Component
 public class AppointmentCardSearchService extends FHCCommonService {
 	
 	private static final int NURSE_ROLE_NUMBER = 3;

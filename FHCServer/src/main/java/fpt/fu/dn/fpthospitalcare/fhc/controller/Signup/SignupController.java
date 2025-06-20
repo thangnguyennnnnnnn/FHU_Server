@@ -1,5 +1,6 @@
 package fpt.fu.dn.fpthospitalcare.fhc.controller.Signup;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,10 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RestController
 @RequestMapping("/signup")
 public class SignupController {
+	
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private SignupService signupService;
 
 	@RequestMapping(value = "/register-user", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
@@ -21,9 +26,6 @@ public class SignupController {
 
 		// Khai báo định nghĩa function:
 		int workProgram = 1;
-
-		// Khai báo service: service là nơi implement all logic
-		SignupService signupService = new SignupService();
 
 		// Setting model mà service xử dụng
 		signupService.setReciveObject(reciveModel.getModel());
@@ -64,9 +66,6 @@ public class SignupController {
 
 		// Khai báo định nghĩa function:
 		int workProgram = 2;
-
-		// Khai báo service: service là nơi implement all logic
-		SignupService signupService = new SignupService();
 
 		// Setting model mà service xử dụng
 		signupService.setReciveObject(token);

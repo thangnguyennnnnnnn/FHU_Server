@@ -2,13 +2,15 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.RegisterStaff;
 
 import java.sql.SQLException;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.ConstantVariable;
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.FHCCommonService;
 import fpt.fu.dn.fpthospitalcare.fhc.model.StaffModel;
 
-
+@Component
 public class RegisterStaffService extends FHCCommonService {
 	
 	private static final int ADMIN_ROLE_NUMBER = 1;

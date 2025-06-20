@@ -1,5 +1,6 @@
 package fpt.fu.dn.fpthospitalcare.fhc.controller.RegisterStaff;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,15 +15,16 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RequestMapping("/add-staff")
 public class RegisterStaffController {
 	
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private RegisterStaffService registerStaffService;
+	
 	@RequestMapping(value = "/register-staff", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
 	public ReturnModel registerStaff(@RequestBody ReciveModel reciveModel) {
 
 		// Khai báo định nghĩa function:
 		int workProgram = 1;
-		
-		// Khai báo service: service là nơi implement all logic
-		RegisterStaffService registerStaffService = new RegisterStaffService();
 		
 		registerStaffService.setReciveObject(reciveModel.getModel());
 

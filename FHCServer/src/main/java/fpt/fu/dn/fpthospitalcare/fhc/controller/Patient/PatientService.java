@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,6 +17,7 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.AppointmentModelDB;
 import fpt.fu.dn.fpthospitalcare.fhc.model.EditAppoinmentModel;
 
 @Transactional
+@Component
 public class PatientService extends FHCCommonService {
 	@Override
 	public int run(int workProgram) throws Exception {

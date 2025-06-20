@@ -2,6 +2,7 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.Guest;
 
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +15,10 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RestController
 @RequestMapping("/guest")
 public class GuestController {
+	
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private GuestService guestService;
 	
 	@RequestMapping(value = "/send-feedback", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
@@ -30,9 +35,6 @@ public class GuestController {
 		params.put("email", email);
 		params.put("subject", subject);
 		params.put("message", message);
-		
-		// Khai báo service: service là nơi implement all logic
-		GuestService guestService = new GuestService();
 		
 		guestService.setReciveObject(params);
 

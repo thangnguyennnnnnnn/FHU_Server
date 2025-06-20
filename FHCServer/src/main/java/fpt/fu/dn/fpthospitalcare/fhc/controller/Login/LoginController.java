@@ -1,5 +1,6 @@
 package fpt.fu.dn.fpthospitalcare.fhc.controller.Login;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,10 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RequestMapping("/login")
 public class LoginController {
 
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private LoginService loginService;
+	
 	// "/signup": URL mapping localhot:user/signup
 	@RequestMapping(value = "/login-system", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
@@ -22,8 +27,6 @@ public class LoginController {
 		// Khai báo định nghĩa function:
 		int workProgram = 1;
 
-		// Khai báo service: service là nơi implement all logic
-		LoginService loginService = new LoginService();
 
 		// Setting model mà service xử dụng
 		loginService.setReciveObject(reciveModel.getModel());

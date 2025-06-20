@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,6 +24,7 @@ import fpt.fu.dn.fpthospitalcare.fhc.controller.User.Model.UserProfileModel;
 import fpt.fu.dn.fpthospitalcare.fhc.controller.User.Model.ProfileUpdateModel;
 import fpt.fu.dn.fpthospitalcare.fhc.controller.User.Model.ChangePasswordModel;
 
+@Component
 public class UserService extends FHCCommonService {
 
 	@Override

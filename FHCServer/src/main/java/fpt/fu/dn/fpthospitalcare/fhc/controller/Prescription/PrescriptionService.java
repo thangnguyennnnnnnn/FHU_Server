@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.ConstantVariable;
@@ -14,6 +16,7 @@ import fpt.fu.dn.fpthospitalcare.fhc.controller.Prescription.Model.PrescriptionC
 import fpt.fu.dn.fpthospitalcare.fhc.controller.Prescription.Model.MedicineModel2;
 import fpt.fu.dn.fpthospitalcare.fhc.controller.Prescription.Model.PrescriptionReturnModel;
 
+@Component
 public class PrescriptionService extends FHCCommonService {
 
 	@Override

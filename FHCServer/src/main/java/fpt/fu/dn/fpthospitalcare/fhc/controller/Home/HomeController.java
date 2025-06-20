@@ -1,5 +1,6 @@
 package fpt.fu.dn.fpthospitalcare.fhc.controller.Home;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +15,7 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RequestMapping("/home")
 public class HomeController {
 	
+	@Autowired
 	private HomeService home;
 	
 	private ReturnModel rm;
@@ -22,7 +24,6 @@ public class HomeController {
 	@ResponseBody
     public ReturnModel home() {
 		int workProgram = 1;
-		home = new HomeService();
 		rm = new ReturnModel();
 		try {
 			int exeNo = home.execute(workProgram);
@@ -41,7 +42,6 @@ public class HomeController {
 	@ResponseBody
     public ReturnModel home2(@RequestBody HomeModel homeModel) {
 		int workProgram = 2;
-		home = new HomeService();
 		home.setReciveObject(homeModel);
 		rm = new ReturnModel();
 		try {

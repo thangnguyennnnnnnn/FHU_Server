@@ -5,11 +5,13 @@ import java.sql.Statement;
 import java.util.HashMap;
 
 import org.apache.naming.factory.SendMailFactory;
+import org.springframework.stereotype.Component;
 
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.ConstantVariable;
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.FHCCommonService;
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.MailService;
 
+@Component
 public class GuestService extends FHCCommonService {
 	@Override
 	public int run(int workProgram) throws Exception {

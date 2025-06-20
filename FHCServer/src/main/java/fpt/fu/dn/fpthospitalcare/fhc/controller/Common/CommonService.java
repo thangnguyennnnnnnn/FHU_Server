@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.ConstantVariable;
@@ -16,6 +18,7 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.BuildingModel;
 import fpt.fu.dn.fpthospitalcare.fhc.model.FloorModel;
 import fpt.fu.dn.fpthospitalcare.fhc.model.RoomModel;
 
+@Component
 public class CommonService extends FHCCommonService {
 
 	@Override

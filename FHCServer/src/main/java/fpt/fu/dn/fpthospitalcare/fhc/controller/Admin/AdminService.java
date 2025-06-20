@@ -14,6 +14,7 @@ import java.util.List;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.springframework.stereotype.Component;
 
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
@@ -24,6 +25,7 @@ import fpt.fu.dn.fpthospitalcare.fhc.controller.Admin.Model.FeedbackModel;
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.ConstantVariable;
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.FHCCommonService;
 
+@Component
 public class AdminService extends FHCCommonService {
 
 	private static final int NURSE_ADMIN_NUMBER = 1;

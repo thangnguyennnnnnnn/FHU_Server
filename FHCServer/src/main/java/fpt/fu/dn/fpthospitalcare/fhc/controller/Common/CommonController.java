@@ -2,6 +2,7 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.Common;
 
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,15 +18,16 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RequestMapping("/fhc-common")
 public class CommonController {
 	
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private CommonService commonService;
+	
 	@RequestMapping(value="/get-specialization", method=RequestMethod.GET, produces="application/json")
 	@ResponseBody
     public ReturnModel getSpecializations() {
 
 		// Khai báo định nghĩa function: 
 		int workProgram = 1;
-		
-		// Khai báo service: service là nơi implement all logic
-		CommonService commonService = new CommonService();
 		
 		// Khai báo object trả về client
 		ReturnModel rm = new ReturnModel();
@@ -59,9 +61,6 @@ public class CommonController {
 		// Khai báo định nghĩa function: 
 		int workProgram = 2;
 		
-		// Khai báo service: service là nơi implement all logic
-		CommonService commonService = new CommonService();
-		
 		// Khai báo object trả về client
 		ReturnModel rm = new ReturnModel();
 		
@@ -93,9 +92,6 @@ public class CommonController {
 
 		// Khai báo định nghĩa function: 
 		int workProgram = 3;
-		
-		// Khai báo service: service là nơi implement all logic
-		CommonService commonService = new CommonService();
 		
 		// Khai báo object trả về client
 		ReturnModel rm = new ReturnModel();
@@ -129,9 +125,6 @@ public class CommonController {
 		// Khai báo định nghĩa function: 
 		int workProgram = 4;
 		
-		// Khai báo service: service là nơi implement all logic
-		CommonService commonService = new CommonService();
-		
 		// Khai báo object trả về client
 		ReturnModel rm = new ReturnModel();
 		
@@ -164,9 +157,6 @@ public class CommonController {
 		// Khai báo định nghĩa function: 
 		int workProgram = 5;
 		
-		// Khai báo service: service là nơi implement all logic
-		CommonService commonService = new CommonService();
-		
 		// Khai báo object trả về client
 		ReturnModel rm = new ReturnModel();
 		
@@ -198,9 +188,6 @@ public class CommonController {
 
 		// Khai báo định nghĩa function: 
 		int workProgram = 6;
-		
-		// Khai báo service: service là nơi implement all logic
-		CommonService commonService = new CommonService();
 		
 		// Đặt object nhận từ client
 		commonService.setReciveObject(recive.getModel());
@@ -239,9 +226,6 @@ public class CommonController {
 
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("userId", userId);
-		
-		// Khai báo service: service là nơi implement all logic
-		CommonService commonService = new CommonService();
 		
 		commonService.setReciveObject(params);
 
@@ -283,9 +267,6 @@ public class CommonController {
 
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("id", id);
-		
-		// Khai báo service: service là nơi implement all logic
-		CommonService commonService = new CommonService();
 		
 		commonService.setReciveObject(params);
 

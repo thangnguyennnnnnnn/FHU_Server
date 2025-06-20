@@ -2,6 +2,7 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.Diagnostic;
 
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,10 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RequestMapping("/diagnostic")
 public class DiagnosticController {
 	
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private DiagnosticService diagnosticService;
+	
 	@RequestMapping(value = "/get-diagnostic-cards", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public ReturnModel getDiagnostics(@RequestParam("userId") String userId,
@@ -30,9 +35,6 @@ public class DiagnosticController {
 		params.put("userId", userId);
 		params.put("appointmentId", appointmentId);
 		params.put("name", name);
-		
-		// Khai báo service: service là nơi implement all logic
-		DiagnosticService diagnosticService = new DiagnosticService();
 		
 		diagnosticService.setReciveObject(params);
 
@@ -69,9 +71,6 @@ public class DiagnosticController {
 
 		// Khai báo định nghĩa function:
 		int workProgram = 2;
-		
-		// Khai báo service: service là nơi implement all logic
-		DiagnosticService diagnosticService = new DiagnosticService();
 		
 		diagnosticService.setReciveObject(reciveModel.getModel());
 

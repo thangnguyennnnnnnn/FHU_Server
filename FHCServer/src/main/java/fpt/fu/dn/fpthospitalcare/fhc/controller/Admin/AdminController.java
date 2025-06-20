@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.ConstantVariable;
 import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 
@@ -15,6 +15,10 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RequestMapping("/admin")
 public class AdminController {
 
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private AdminService adminService;
+	
 	@RequestMapping(value = "/create-report", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public ReturnModel createReport(@RequestParam("userId") String userId,
@@ -31,8 +35,6 @@ public class AdminController {
 		params.put("year", year);
 		params.put("type", type);
 		
-		// Khai báo service: service là nơi implement all logic
-		AdminService adminService = new AdminService();
 		
 		adminService.setReciveObject(params);
 
@@ -79,9 +81,6 @@ public class AdminController {
 		params.put("userId", userId);
 		params.put("date", date);
 		params.put("id", id);
-		
-		// Khai báo service: service là nơi implement all logic
-		AdminService adminService = new AdminService();
 		
 		adminService.setReciveObject(params);
 

@@ -4,12 +4,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.ConstantVariable;
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.FHCCommonService;
 import fpt.fu.dn.fpthospitalcare.fhc.controller.Employee.Model.WorkingTimeModel;
 
+@Component
 public class EmployeeService extends FHCCommonService {
 
 	@Override

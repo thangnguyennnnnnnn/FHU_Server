@@ -2,6 +2,7 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.AppointmentCardSearch;
 
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +17,10 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RestController
 @RequestMapping("/apointment-card")
 public class AppointmentCardSearchController {
+	
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private AppointmentCardSearchService appointmentCardSearchService;
 	
 	@RequestMapping(value = "/search-apointments", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
@@ -39,8 +44,6 @@ public class AppointmentCardSearchController {
 		params.put("facultyId", facultyId);
 		params.put("faculty", faculty);
 		
-		// Khai báo service: service là nơi implement all logic
-		AppointmentCardSearchService appointmentCardSearchService = new AppointmentCardSearchService();
 		
 		appointmentCardSearchService.setReciveObject(params);
 
@@ -81,7 +84,6 @@ public class AppointmentCardSearchController {
 		int workProgram = 2;
 		
 		// Khai báo service: service là nơi implement all logic
-		AppointmentCardSearchService appointmentCardSearchService = new AppointmentCardSearchService();
 		appointmentCardSearchService.setReciveObject(reciveModel.getModel());
 
 		// Khai báo object trả về client

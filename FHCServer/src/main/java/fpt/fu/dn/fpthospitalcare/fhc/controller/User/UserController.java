@@ -2,6 +2,7 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.User;
 
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,10 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+	
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private UserService userService;
 
 	// "/signup": URL mapping localhot:user/signup
 	@RequestMapping(value = "/signin", method = RequestMethod.POST, produces = "application/json")
@@ -25,9 +30,6 @@ public class UserController {
 
 		// Khai báo định nghĩa function:
 		int workProgram = 1;
-
-		// Khai báo service: service là nơi implement all logic
-		UserService userService = new UserService();
 
 		// Setting model mà service xử dụng
 		userService.setReciveObject(reciveModel.getModel());
@@ -76,9 +78,6 @@ public class UserController {
 	public ReturnModel getProfile(@RequestParam("userId") String userId) {
 		// Khai báo định nghĩa function:
 		int workProgram = 3;
-
-		// Khai báo service: service là nơi implement all logic
-		UserService userService = new UserService();
 
 		// Setting model mà service xử dụng
 		userService.setReciveObject(userId);
@@ -130,9 +129,6 @@ public class UserController {
 		// Khai báo định nghĩa function:
 		int workProgram = 2;
 
-		// Khai báo service: service là nơi implement all logic
-		UserService userService = new UserService();
-
 		// Setting model mà service xử dụng
 		userService.setReciveObject(reciveModel.getModel());
 
@@ -171,7 +167,6 @@ public class UserController {
 	@ResponseBody
 	public ReturnModel updateProfile(@RequestBody ReciveModel reciveModel) {
 		int workProgram = 4;
-		UserService userService = new UserService();
 		userService.setReciveObject(reciveModel.getModel());
 		ReturnModel rm = new ReturnModel();
 		try {
@@ -202,7 +197,6 @@ public class UserController {
 	@ResponseBody
 	public ReturnModel changePassword(@RequestBody ReciveModel reciveModel) {
 		int workProgram = 5;
-		UserService userService = new UserService();
 		userService.setReciveObject(reciveModel.getModel());
 		ReturnModel rm = new ReturnModel();
 		try {
@@ -229,9 +223,6 @@ public class UserController {
 	public ReturnModel uploadAvata(@RequestParam("file") MultipartFile file, @RequestParam("userId") String userId) {
 		// Khai báo định nghĩa function:
 		int workProgram = 6;
-
-		// Khai báo service: service là nơi implement all logic
-		UserService userService = new UserService();
 
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("avata", file);

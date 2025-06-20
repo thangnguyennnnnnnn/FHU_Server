@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Base64;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -36,6 +37,7 @@ import fpt.fu.dn.fpthospitalcare.fhc.controller.Medicine.Model.MedicineImportMod
 import fpt.fu.dn.fpthospitalcare.fhc.controller.Medicine.Model.FileInfo;
 import fpt.fu.dn.fpthospitalcare.fhc.controller.Medicine.Model.WorkingTime;
 
+@Component
 public class MedicineService extends FHCCommonService {
 
 	@Override

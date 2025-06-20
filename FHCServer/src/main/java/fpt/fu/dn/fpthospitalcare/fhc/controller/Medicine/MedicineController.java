@@ -3,6 +3,7 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.Medicine;
 import java.sql.SQLException;
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +17,10 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RestController
 @RequestMapping("/medicine")
 public class MedicineController {
+	
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private MedicineService medicineServive;
 
 	@RequestMapping(value = "/upload-medicine", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
@@ -23,9 +28,6 @@ public class MedicineController {
 			@RequestParam("userId") String userId) {
 		// Khai báo định nghĩa function:
 		int workProgram = 1;
-
-		// Khai báo service: service là nơi implement all logic
-		MedicineService medicineServive = new MedicineService();
 
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("medicinFile", file);
@@ -80,9 +82,6 @@ public class MedicineController {
 		// Khai báo định nghĩa function:
 		int workProgram = 2;
 
-		// Khai báo service: service là nơi implement all logic
-		MedicineService medicineServive = new MedicineService();
-
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("name", name);
 		param.put("userId", userId);
@@ -130,9 +129,6 @@ public class MedicineController {
 		// Khai báo định nghĩa function:
 		int workProgram = 3;
 
-		// Khai báo service: service là nơi implement all logic
-		MedicineService medicineServive = new MedicineService();
-
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("year", year);
 		param.put("month", month);
@@ -178,9 +174,6 @@ public class MedicineController {
 			@RequestParam("model") String model) {
 		// Khai báo định nghĩa function:
 		int workProgram = 4;
-
-		// Khai báo service: service là nơi implement all logic
-		MedicineService medicineServive = new MedicineService();
 
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("medicinFile", file);
@@ -233,9 +226,6 @@ public class MedicineController {
 		// Khai báo định nghĩa function:
 		int workProgram = 5;
 
-		// Khai báo service: service là nơi implement all logic
-		MedicineService medicineServive = new MedicineService();
-
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("year", year);
 		param.put("month", month);
@@ -286,9 +276,6 @@ public class MedicineController {
 		// Khai báo định nghĩa function:
 		int workProgram = 6;
 
-		// Khai báo service: service là nơi implement all logic
-		MedicineService medicineServive = new MedicineService();
-
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("filename", filename);
 		param.put("userId", userId);
@@ -330,9 +317,6 @@ public class MedicineController {
 	public ReturnModel createImportRequest(@RequestParam("userId") String userId) {
 		// Khai báo định nghĩa function:
 		int workProgram = 7;
-
-		// Khai báo service: service là nơi implement all logic
-		MedicineService medicineServive = new MedicineService();
 		
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("userId", userId);
@@ -375,9 +359,6 @@ public class MedicineController {
 		// Khai báo định nghĩa function:
 		int workProgram = 8;
 
-		// Khai báo service: service là nơi implement all logic
-		MedicineService medicineServive = new MedicineService();
-
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("filename", filename);
 		param.put("userId", userId);
@@ -418,9 +399,6 @@ public class MedicineController {
 			@RequestParam("userId") String userId) {
 		// Khai báo định nghĩa function:
 		int workProgram = 9;
-
-		// Khai báo service: service là nơi implement all logic
-		MedicineService medicineServive = new MedicineService();
 
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("medicinFile", file);

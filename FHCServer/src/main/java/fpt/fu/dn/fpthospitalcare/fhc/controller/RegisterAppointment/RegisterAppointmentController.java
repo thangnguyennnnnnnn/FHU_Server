@@ -2,6 +2,7 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.RegisterAppointment;
 
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +17,10 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RestController
 @RequestMapping("/appointment")
 public class RegisterAppointmentController {
+	
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private RegisterAppointmentService registerAppointmentService;
 
 //	@RequestMapping(value = "/register", method = RequestMethod.POST, produces = "application/json")
 //	@ResponseBody
@@ -66,9 +71,6 @@ public class RegisterAppointmentController {
 		// Khai báo định nghĩa function:
 		int workProgram = 2;
 
-		// Khai báo service: service là nơi implement all logic
-		RegisterAppointmentService registerAppointmentService = new RegisterAppointmentService();
-
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("medicalExaminationTime", medicalExaminationTime);
 		params.put("medicalExaminationDay", medicalExaminationDay);
@@ -109,9 +111,6 @@ public class RegisterAppointmentController {
 
 		// Khai báo định nghĩa function:
 		int workProgram = 3;
-
-		// Khai báo service: service là nơi implement all logic
-		RegisterAppointmentService registerAppointmentService = new RegisterAppointmentService();
 		
 		registerAppointmentService.setReciveObject(reciveModel.getModel());
 
@@ -151,9 +150,6 @@ public class RegisterAppointmentController {
 
 		// Khai báo định nghĩa function:
 		int workProgram = 1;
-
-		// Khai báo service: service là nơi implement all logic
-		RegisterAppointmentService registerAppointmentService = new RegisterAppointmentService();
 		
 		registerAppointmentService.setReciveObject(reciveModel.getModel());
 
@@ -195,9 +191,6 @@ public class RegisterAppointmentController {
 		// Khai báo định nghĩa function:
 		int workProgram = 4;
 
-		// Khai báo service: service là nơi implement all logic
-		RegisterAppointmentService registerAppointmentService = new RegisterAppointmentService();
-
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("userID", userID);
 		params.put("appoinmentId", appoinmentId);
@@ -238,9 +231,6 @@ public class RegisterAppointmentController {
 
 		// Khai báo định nghĩa function:
 		int workProgram = 5;
-
-		// Khai báo service: service là nơi implement all logic
-		RegisterAppointmentService registerAppointmentService = new RegisterAppointmentService();
 
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("userID", userID);
@@ -287,8 +277,6 @@ public class RegisterAppointmentController {
 		HashMap<String, String> params = new HashMap<>();
 		params.put("apoinmentId", apoinmentId);
 		params.put("userId", userId);
-		// Khai báo service: service là nơi implement all logic
-		RegisterAppointmentService registerAppointmentService = new RegisterAppointmentService();
 		
 		registerAppointmentService.setReciveObject(params);
 

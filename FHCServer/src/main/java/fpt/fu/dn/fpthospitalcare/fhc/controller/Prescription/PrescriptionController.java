@@ -3,6 +3,7 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.Prescription;
 import java.sql.SQLException;
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +16,10 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RestController
 @RequestMapping("/prescription")
 public class PrescriptionController {
+	
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private PrescriptionService prescriptionService;
 
 	@RequestMapping(value = "/create-prescription", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
@@ -25,9 +30,6 @@ public class PrescriptionController {
 			@RequestParam("appoinmentId") String appoinmentId) {
 		// Khai báo định nghĩa function:
 		int workProgram = 1;
-
-		// Khai báo service: service là nơi implement all logic
-		PrescriptionService prescriptionService = new PrescriptionService();
 
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("prescriptionList", prescriptionList);
@@ -76,9 +78,6 @@ public class PrescriptionController {
 		// Khai báo định nghĩa function:
 		int workProgram = 2;
 
-		// Khai báo service: service là nơi implement all logic
-		PrescriptionService prescriptionService = new PrescriptionService();
-
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("appointmentId", appointmentId);
 		param.put("userId", userId);
@@ -122,9 +121,6 @@ public class PrescriptionController {
 			@RequestParam("userId") String userId) {
 		// Khai báo định nghĩa function:
 		int workProgram = 3;
-
-		// Khai báo service: service là nơi implement all logic
-		PrescriptionService prescriptionService = new PrescriptionService();
 
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("medicineModelList", medicineModelList);

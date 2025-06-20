@@ -2,6 +2,7 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.Patient;
 
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,7 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RequestMapping("/patient")
 public class PatientController {
 	
+	@Autowired
 	private PatientService patientService;
 	private ReturnModel rm;
 	
@@ -26,9 +28,6 @@ public class PatientController {
 
 		// Khai báo định nghĩa function: 
 		int workProgram = 1;
-		
-		// Khai báo service: service là nơi implement all logic
-		patientService = new PatientService();
 		
 		//Setting model mà service xử dụng
 		patientService.setReciveObject(reciveModel.getModel());
@@ -65,9 +64,6 @@ public class PatientController {
 
 		// Khai báo định nghĩa function: 
 		int workProgram = 2;
-		
-		// Khai báo service: service là nơi implement all logic
-		patientService = new PatientService();
 		
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("userID", userID);
@@ -109,9 +105,6 @@ public class PatientController {
 		// Khai báo định nghĩa function: 
 		int workProgram = 4;
 		
-		// Khai báo service: service là nơi implement all logic
-		patientService = new PatientService();
-		
 		//Setting model mà service xử dụng
 		patientService.setReciveObject(appoinmentId);
 		
@@ -152,9 +145,6 @@ public class PatientController {
 		// Khai báo định nghĩa function: 
 		int workProgram = 3;
 		
-		// Khai báo service: service là nơi implement all logic
-		patientService = new PatientService();
-		
 		//Setting model mà service xử dụng
 		patientService.setReciveObject(reciveModel.getModel());
 		
@@ -190,9 +180,6 @@ public class PatientController {
 
 		// Khai báo định nghĩa function: 
 		int workProgram = 5;
-		
-		// Khai báo service: service là nơi implement all logic
-		patientService = new PatientService();
 		
 		//Setting model mà service xử dụng
 		patientService.setReciveObject(reciveModel.getModel());

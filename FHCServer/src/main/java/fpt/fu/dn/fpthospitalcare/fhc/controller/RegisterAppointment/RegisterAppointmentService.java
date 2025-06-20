@@ -5,6 +5,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,6 +18,7 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.Faculty;
 import fpt.fu.dn.fpthospitalcare.fhc.controller.RegisterAppointment.Model.DoctorDisplayModel;
 import fpt.fu.dn.fpthospitalcare.fhc.model.AppointmentModelDB;
 
+@Component
 public class RegisterAppointmentService extends FHCCommonService {
 
 	@Override

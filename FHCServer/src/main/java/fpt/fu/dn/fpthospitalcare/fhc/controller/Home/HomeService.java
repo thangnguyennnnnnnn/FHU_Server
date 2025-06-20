@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.FHCCommonService;
@@ -11,6 +12,7 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.HomeModel;
 import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 
 @Transactional
+@Component
 public class HomeService extends FHCCommonService{
 
 	@Override

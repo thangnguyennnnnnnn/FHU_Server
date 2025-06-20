@@ -2,6 +2,7 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.Employee;
 
 import java.util.HashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +15,10 @@ import fpt.fu.dn.fpthospitalcare.fhc.model.ReturnModel;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
+	
+	// Khai báo service: service là nơi implement all logic
+	@Autowired
+	private EmployeeService employeeService;
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
@@ -30,9 +35,6 @@ public class EmployeeController {
 		params.put("staffId", staffId);
 		params.put("staffName", staffName);
 		params.put("faculty", faculty);
-		
-		// Khai báo service: service là nơi implement all logic
-		EmployeeService employeeService = new EmployeeService();
 		
 		employeeService.setReciveObject(params);
 
@@ -79,9 +81,6 @@ public class EmployeeController {
 		params.put("onDate", onDate);
 		params.put("reason", reason);
 		params.put("userId", userId);
-		
-		// Khai báo service: service là nơi implement all logic
-		EmployeeService employeeService = new EmployeeService();
 		
 		employeeService.setReciveObject(params);
 
@@ -133,9 +132,6 @@ public class EmployeeController {
 		params.put("id", id);
 		params.put("userId", userId);
 		params.put("date", date);
-		
-		// Khai báo service: service là nơi implement all logic
-		EmployeeService employeeService = new EmployeeService();
 		
 		employeeService.setReciveObject(params);
 

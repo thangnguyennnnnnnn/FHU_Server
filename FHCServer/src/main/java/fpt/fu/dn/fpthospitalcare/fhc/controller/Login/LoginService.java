@@ -3,6 +3,9 @@ package fpt.fu.dn.fpthospitalcare.fhc.controller.Login;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,6 +14,7 @@ import fpt.fu.dn.fpthospitalcare.fhc.fhcService.ConstantVariable;
 import fpt.fu.dn.fpthospitalcare.fhc.fhcService.FHCCommonService;
 import fpt.fu.dn.fpthospitalcare.fhc.model.UserLoginModel;
 
+@Component
 public class LoginService extends FHCCommonService {
 	
 	@Override

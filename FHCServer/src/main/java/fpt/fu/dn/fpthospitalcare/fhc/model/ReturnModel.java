@@ -16,6 +16,13 @@ public class ReturnModel {
 	//public void setSessionAuthor(String sessionAuthor) {
 	//	this.sessionAuthor = sessionAuthor;
 	//}
+	
+	public ReturnModel() {
+	}
+
+	public ReturnModel(Object returnObject) {
+		this.returnObject = returnObject;
+	}
 
 	public int getErrorCode() {
 		return errorCode;

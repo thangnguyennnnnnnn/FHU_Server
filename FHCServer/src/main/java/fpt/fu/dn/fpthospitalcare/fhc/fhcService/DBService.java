@@ -9,13 +9,14 @@ public class DBService {
 	public Connection connection;
 	
 	//@Value("${spring.datasource.url}")
-	private String connectionString = "jdbc:sqlserver://;serverName=fhc.cec4vdiuuico.us-east-1.rds.amazonaws.com;databaseName=FHC;encrypt=true;trustServerCertificate=true;";
+	//private String connectionString = "jdbc:sqlserver://;serverName=fhc.cec4vdiuuico.us-east-1.rds.amazonaws.com;databaseName=FHC;encrypt=true;trustServerCertificate=true;";
+	private String connectionString = "jdbc:sqlserver://;serverName=THAWNGS\\SQLEXPRESS;databaseName=FHC;encrypt=true;trustServerCertificate=true;";
 	
 	//@Value("${spring.datasource.username}")
-	private String user = "thangnh35";
+	private String user = "fhcadmin";
 	
 	//@Value("${spring.datasource.password}")
-	private String password = "fhcadmin123";
+	private String password = "fhcadmin";
 	
 	//@Value("${spring.datasource.driverClassName}")
 	String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
